@@ -2,7 +2,7 @@
 
 
 ## Whiteboard Process
-![array-binary-search](./Code%20Challenge%203.png)
+![array-binary-search](./code%20Challenge3.1.png)
 
 
 ## Solution
