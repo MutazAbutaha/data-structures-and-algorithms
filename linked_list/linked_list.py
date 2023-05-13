@@ -6,6 +6,7 @@ class Node :
         self.value = value
         self.next = next
 
+      
         
 class Linked_List:
    
