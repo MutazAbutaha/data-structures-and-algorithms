@@ -52,6 +52,63 @@ def test_list_values():
     expected = '{ 1 } -> { 2 } -> { 3 } -> NONE'
     assert actual == expected
 
+def test_append_to_end():
+    my_list = Linked_List()
+    my_list.append(2)
+    assert my_list.head.value == 2
+    assert my_list.head.next is None
+    my_list.append(5)
+    assert my_list.head.next.value == 5
+    assert my_list.head.next.next is None
+def test_append_multiple_nodes():
+    my_list = Linked_List()
+    my_list.append(2)
+    my_list.append(5)
+    my_list.append(8)
+    assert my_list.head.value == 2
+    assert my_list.head.next.value == 5
+    assert my_list.head.next.next.value == 8
+    assert my_list.head.next.next.next is None
+def test_insert_before_middle_node():
+    my_list = Linked_List()
+    my_list.append(1)
+    my_list.append(3)
+    my_list.append(4)
+    my_list.insert_before(3, 2)
+    assert my_list.head.value == 1
+    assert my_list.head.next.value == 2
+    assert my_list.head.next.next.value == 3
+    assert my_list.head.next.next.next.value == 4
+    assert my_list.head.next.next.next.next is None
+def test_insert_before_first_node():
+    my_list = Linked_List()
+    my_list.append(2)
+    my_list.append(3)
+    my_list.insert_before(2, 1)
+    assert my_list.head.value == 1
+    assert my_list.head.next.value == 2
+    assert my_list.head.next.next.value == 3
+    assert my_list.head.next.next.next is None
+def test_insert_after_middle_node():
+    my_list = Linked_List()
+    my_list.append(1)
+    my_list.append(2)
+    my_list.append(4)
+    my_list.insert_after(2, 3)
+    assert my_list.head.value == 1
+    assert my_list.head.next.value == 2
+    assert my_list.head.next.next.value == 3
+    assert my_list.head.next.next.next.value == 4
+    assert my_list.head.next.next.next.next is None
+def test_insert_after_last_node():
+    my_list = Linked_List()
+    my_list.append(1)
+    my_list.append(2)
+    my_list.insert_after(2, 3)
+    assert my_list.head.value == 1
+    assert my_list.head.next.value == 2
+    assert my_list.head.next.next.value == 3
+    assert my_list.head.next.next.next is None
 
 @pytest.fixture(autouse=True)
 def counter_reset():
