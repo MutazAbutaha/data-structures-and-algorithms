@@ -1,13 +1,9 @@
 import re
-
-
 class Node :
     def __init__(self, value, next = None):
         self.value = value
         self.next = next
 
-      
-        
 class Linked_List:
    
     def __init__(self, head = None):
@@ -82,6 +78,26 @@ class Linked_List:
                 current.next = new_node
                 return
             current = current.next
+    def kthFromEnd(self, k):
+        if self.head is None:
+            return "Linked list is empty."
+        first = self.head
+        second = self.head
+        count = 0
+        while count < k:
+            if second.next is None:
+                return "Exception"
+            second = second.next
+            count += 1
+# moves the second pointer k steps from ahead
+# count to  track of the number of steps
+        while second.next:
+            first = first.next
+            second = second.next
+# move the first and second pointers
+# second reaches the last node
+# first pointer ends up at the node that is k steps
+        return first.value
 
     def traverse(self):
         current = self.head
