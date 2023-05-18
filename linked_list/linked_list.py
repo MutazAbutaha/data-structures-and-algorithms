@@ -79,6 +79,8 @@ class Linked_List:
                 return
             current = current.next
     def kthFromEnd(self, k):
+        if k < 0 :
+            return ("Exception: Negative value not accepted.")
         if self.head is None:
             return "Linked list is empty."
         first = self.head
@@ -105,3 +107,4 @@ class Linked_List:
             print(f'{{{current.value}}} ->', end=' ')
             current = current.next
         print('X')
+
