@@ -3,34 +3,54 @@ class Node:
         self.value = value
         self.next = None
 
-def insert(self, value):
-        new_node = Node(value)
-        new_node.next = self.head
-        self.head = new_node
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
+    def to_string(self):
+        output = ""
+        curr = self.head
+        while (curr is not None):
+            output += f"{{ {curr.value} }} -> "
+            curr = curr.next
+        output += "NONE"
+        return output
 
-def zipLists(list1, list2):
-    if not list1:  # If list1 is empty, return list2
-        return list2
-    if not list2:  # If list2 is empty, return list1
-        return list1
-    # Create a dummy node to serve as the head of the new list
-    dummy = Node(0)
-    current = dummy  # Pointer to the current node in the new list
-    while list1 and list2:
-        # Add the current node from list1 to the new list
-        current.next = list1
-        list1 = list1.next
-        current = current.next
-        # Add the current node from list2 to the new list
-        current.next = list2
-        list2 = list2.next
-        current = current.next
-    # If list1 is longer than list2, add the remaining nodes
-    if list1:
-        current.next = list1
-    # If list2 is longer than list1, add the remaining nodes
-    if list2:
-        current.next = list2
-    return dummy.next  # Return the head of the new list
+    def append(self, new_value):
+        new_node = Node(new_value)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+
+    def zip_lists(self, list_one, list_two):
+        if list_one.head is None:
+            return list_two
+        if list_two.head is None:
+            return list_one
+        curr_one = list_one.head
+        curr_two = list_two.head
+        while curr_one is not None and curr_two is not None:
+            next1 = curr_one.next
+            next2 = curr_two.next
+            curr_one.next = curr_two
+            curr_two.next = next1 or next2
+            curr_one = next1
+            curr_two = next2
+        return list_one.to_string()
+    
+linked_list_one = LinkedList()
+linked_list_one.append(1)
+linked_list_one.append(2)
+linked_list_one.append(3)
+linked_list_two = LinkedList()
+linked_list_two.append(4)
+linked_list_two.append(5)
+linked_list_two.append(6)
+zip = linked_list_one.zip_lists(linked_list_one, linked_list_two)
+print(zip)
+
 
