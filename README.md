@@ -7,3 +7,4 @@
 | 5   |      [Stack and Queue](./Stack/ReadMe.md)|
 | 6   |      [Linked List Zip](./linked-list-zip/linked_list_zip.md)|
 | 7   |      [stack queue pseudo](./stack-queue-pseudo/ReadMe.md)|
+| 8   |      [stack queue animal Shelter](./stack-queue-animal-shelter/ReadMe.md)|
