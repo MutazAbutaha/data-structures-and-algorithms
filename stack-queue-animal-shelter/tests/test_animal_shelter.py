@@ -9,7 +9,7 @@ def test_enqueue(capsys):
     captured = capsys.readouterr()
     output = captured.out.strip()
 
-    assert output == "Animal Type : dog, Animal Name : Mossberg\nAnimal Type : cat, Animal Name : Mirabel"
+    assert output == "Animal Type: dog, Animal Name: Mossberg\nAnimal Type: cat, Animal Name: Mirabel"
 
 
 def test_dequeue(capsys):
@@ -24,7 +24,7 @@ def test_dequeue(capsys):
     output = captured.out.strip()
 
 
-    assert output == "Mirabel\nAnimal Type : dog, Animal Name : Mossberg\nAnimal Type : dog, Animal Name : Max"
+    assert output == "Mirabel\nAnimal Type: dog, Animal Name: Mossberg\nAnimal Type: dog, Animal Name: Max"
 
 def test_invalid_pref():
     animal_shel1 = AnimalShelter()
