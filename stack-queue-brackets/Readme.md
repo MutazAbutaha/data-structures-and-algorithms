@@ -2,11 +2,11 @@
 
 
 # Whiteboard Process : 
-![code13](./code13.png)
+![code13](./code13.1.png)
 
 ## Approach & Efficiency
 
-### validate_brackets() ===> Big O(n2) , space o(n)
+### validate_brackets() ===> Big O(n) , space o(n)
 
 
 ## Solution
