@@ -32,6 +32,8 @@ class stack:
         else:
             return False
         
+   
+        
     
 if __name__ == "__main__":
     s = stack()
