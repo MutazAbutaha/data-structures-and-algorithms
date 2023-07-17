@@ -11,5 +11,5 @@
 | 9   |      [stack queue Brackets](./stack-queue-brackets/Readme.md)|
 | 10   |      [trees](./trees/Readme.md)|
 | 11   |      [Sort insertion](./sorting/insertion/README.md)|
-| 12   |      [Sort merge](.sorting/merge/README.md)|
+| 12   |      [Sort merge](./sorting/merge/README.md)|
 | 13   |      [Sort Comparisons](./sorting/Comparisons/README.md)|
