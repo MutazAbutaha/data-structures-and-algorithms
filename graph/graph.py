@@ -46,6 +46,8 @@ class Edge:
     def __init__(self, vertix, weight=0):
         self.weight = weight
         self.vertix = vertix
+    def __str__(self) :
+        return str(self.vertix)
 
 class Graph:
 
